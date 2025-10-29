@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panela - El Endulzante Ancestral</title>
+    <style>
+        /* Estilos generales que evocan la naturaleza */
+        :root {
+            --color-tierra: #8B4513;
+            --color-cana: #556B2F;
+            --color-dorado: #DAA520;
+            --color-crema: #FFF8DC;
+            --color-verde-oscuro: #2E8B57;
+            --color-marron-claro: #DEB887;
+            --whatsapp-green: #25D366;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--color-crema);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to right, var(--color-verde-oscuro), var(--color-cana));
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            position: relative;
+        }
+        
+        /* Sección de introducción */
+        .intro {
+            padding: 60px 0;
+            text-align: center;
+            background-color: white;
+            border-bottom: 2px solid var(--color-marron-claro);
+        }
+        
+        .intro h2 {
+            color: var(--color-tierra);
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+        
+        .intro p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1.1rem;
+        }
+        
+        /* Sección de beneficios */
+        .benefits {
+            padding: 60px 0;
+            background-color: var(--color-crema);
+        }
+        
+        .benefits h2 {
+            text-align: center;
+            color: var(--color-verde-oscuro);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+        
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--color-dorado);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-card h3 {
+            color: var(--color-tierra);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        /* Sección de presentaciones */
+        .presentations {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .presentations h2 {
+            text-align: center;
+            color: var(--color-verde-oscuro);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+        
+        .presentation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .presentation-card {
+            background-color: var(--color-crema);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--color-marron-claro);
+        }
+        
+        .presentation-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .presentation-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .presentation-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .presentation-card:hover .presentation-image img {
+            transform: scale(1.1);
+        }
+        
+        .presentation-info {
+            padding: 20px;
+        }
+        
+        .presentation-info h3 {
+            color: var(--color-tierra);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        /* Sección de características técnicas */
+        .tech-specs {
+            padding: 60px 0;
+            background-color: var(--color-crema);
+        }
+        
+        .tech-specs h2 {
+            text-align: center;
+            color: var(--color-verde-oscuro);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .spec-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--color-dorado);
+        }
+        
+        .spec-item h3 {
+            color: var(--color-tierra);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, var(--color-verde-oscuro), var(--color-cana));
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .final-message {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-top: 20px;
+        }
+        
+        /* Botón de WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-radius: 50px;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            font-weight: bold;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .whatsapp-icon {
+            margin-right: 8px;
+            font-size: 24px;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .intro h2, .benefits h2, .presentations h2, .tech-specs h2 {
+                font-size: 1.8rem;
+            }
+            
+            .presentation-grid, .benefit-grid, .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .whatsapp-icon {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 0;
+            }
+            
+            .intro, .benefits, .presentations, .tech-specs {
+                padding: 40px 0;
+            }
+            
+            .whatsapp-button {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Panela Villa Nieves</h1>
+            <p class="tagline">El Endulzante Ancestral, Lleno de Sabor y Vida</p>
+        </div>
+    </header>
+    
+    <section class="intro">
+        <div class="container">
+            <h2>Descripción</h2>
+            <p>Imagina el aroma dulce y terroso de la caña de azúcar recién cosechada, capturado en su forma más pura y dorada. Nuestra Panela no es solo un endulzante; es un viaje directo al corazón de la tradición campesina.</p>
+            <p>Elaborada artesanalmente con los mejores jugos de caña, sin procesos de refinamiento, blanqueo o aditivos químicos, conserva toda la riqueza natural que la naturaleza nos ofrece.</p>
+        </div>
+    </section>
+    
+    <section class="benefits">
+        <div class="container">
+            <h2>¿Por qué amarás nuestra Panela?</h2>
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <h3>Dulzura con Conciencia</h3>
+                    <p>Al elegir nuestra panela, no solo endulzas tu vida, sino que apoyas a comunidades locales de agricultores que cultivan la caña de azúcar con prácticas sostenibles. Cada bloque es un tributo a un oficio ancestral.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Un Respiro de Naturaleza</h3>
+                    <p>Al no ser refinada, la panela conserva minerales esenciales como el hierro, calcio, magnesio y potasio, así como vitaminas. Es la alternativa inteligente para quienes buscan un estilo de vida más natural y consciente.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Sabor que Transforma</h3>
+                    <p>Su sabor complejo, con notas caramelizadas y un toque maltoso, eleva cualquier receta. Disuélvela en tu café de la mañana para un despertar lleno de energía, úsala para preparar una aromática aguapanela con limón, o crea postres increíbles que harán que todos pregunten por tu secreto.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Versatilidad en tu Cocina</h3>
+                    <p>Desde glaseados para carnes hasta galletas de jengibre, desde salsas agridulces hasta un simple pero reconfortante té. La panela es el ingrediente secreto que añade profundidad y carácter a tus platos dulces y salados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="presentations">
+        <div class="container">
+            <h2>Nuestras Presentaciones</h2>
+            <div class="presentation-grid">
+                <div class="presentation-card">
+                    <div class="presentation-image">
+                        <a href="Imagenes/1libra" target="_blank">
+                            <img src="Imagenes/1libra.jpeg" alt="Panela de 1 Libra">
+                        </a>
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Panela de 1 Libra</h3>
+                        <p>Perfecta para uso diario en la cocina. Bloque sólido de 500g ideal para preparar bebidas tradicionales y endulzar tus postres favoritos.</p>
+                    </div>
+                </div>
+                <div class="presentation-card">
+                    <div class="presentation-image">
+                        <a href="Imagenes/4libras" target="_blank">
+                            <img src="Imagenes/4libras.jpeg" alt="Panela de 4 Libras">
+                        </a>
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Panela de 4 Libras</h3>
+                        <p>Ideal para familias o negocios. Este bloque de 2kg te permite disfrutar de la auténtica panela por más tiempo, manteniendo todas sus propiedades.</p>
+                    </div>
+                </div>
+                <div class="presentation-card">
+                    <div class="presentation-image">
+                        <a href="Imagenes/pastilla" target="_blank">
+                            <img src="Imagenes/pastilla.jpeg" alt="Panela en Pastilla">
+                        </a>
+                    </div>
+                    <div class="presentation-info">
+                        <h3>Panela en Pastilla</h3>
+                        <p>La presentación más práctica para llevar contigo. Cada pastilla es la medida perfecta para endulzar una taza de café, té o cualquier bebida caliente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="tech-specs">
+        <div class="container">
+            <h2>Características Técnicas</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <h3>Origen</h3>
+                    <p>Quipile, Colombia</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Ingredientes</h3>
+                    <p>100% Jugo de Caña de Azúcar Puro. No contiene OGM.</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Presentación</h3>
+                    <p>Bloque sólido de 500g / Polvo molido en paquete de 250g.</p>
+                </div>
+                <div class="spec-item">
+                    <h3>Elaboración</h3>
+                    <p>Artesanal, mediante cocción lenta y evaporación al sol.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p class="final-message">No es solo azúcar. Es sabor, es tradición, es vida. Haz el cambio dulce.</p>
+            <p>&copy; 2025 Panela Ancestral. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/573132185772?text=Hola,%20estoy%20interesado%20en%20comprar%20panela" class="whatsapp-button" target="_blank">
+        <span class="whatsapp-icon">📱</span>
+        <span>Comprar</span>
+    </a>
+</body>
+</html>
