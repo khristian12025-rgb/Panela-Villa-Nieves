@@ -216,12 +216,39 @@
             border-radius: 8px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
             border-left: 4px solid var(--color-dorado);
+            display: flex;
+            flex-direction: column;
         }
         
         .spec-item h3 {
             color: var(--color-tierra);
             margin-bottom: 10px;
             font-size: 1.2rem;
+        }
+        
+        .spec-image {
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: var(--color-marron-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-tierra);
+            font-weight: bold;
+            min-height: 150px;
+        }
+        
+        .spec-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .spec-item:hover .spec-image img {
+            transform: scale(1.05);
         }
         
         /* Footer */
@@ -409,19 +436,31 @@
             <div class="specs-grid">
                 <div class="spec-item">
                     <h3>Origen</h3>
-                    <p>Quipile, Colombia</p>
+                    <p>Quipile, Cundinamarca ,Colombia</p>
+                    <div class="spec-image">
+                        <img src="./imagenes/origen1.jpg" alt="Origen de la panela en Quipile, Colombia" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color:var(--color-tierra); font-weight:bold; text-align:center; padding:20px\'>Imagen de Origen<br><small>No disponible</small></div>';">
+                    </div>
                 </div>
                 <div class="spec-item">
                     <h3>Ingredientes</h3>
                     <p>100% Jugo de Caña de Azúcar Puro. No contiene OGM.</p>
+                    <div class="spec-image">
+                        <img src="./imagenes/ingredientes1.jpg" alt="Ingredientes naturales de la panela" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color:var(--color-tierra); font-weight:bold; text-align:center; padding:20px\'>Imagen de Ingredientes<br><small>No disponible</small></div>';">
+                    </div>
                 </div>
                 <div class="spec-item">
                     <h3>Presentación</h3>
                     <p>Bloque sólido de 500g / Polvo molido en paquete de 250g.</p>
+                    <div class="spec-image">
+                        <img src="./imagenes/presentacion1.jpg" alt="Presentaciones de la panela" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color:var(--color-tierra); font-weight:bold; text-align:center; padding:20px\'>Imagen de Presentación<br><small>No disponible</small></div>';">
+                    </div>
                 </div>
                 <div class="spec-item">
                     <h3>Elaboración</h3>
                     <p>Artesanal, mediante cocción lenta y evaporación al sol.</p>
+                    <div class="spec-image">
+                        <img src="./imagenes/elaboracion.jpg" alt="Proceso de elaboración artesanal" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color:var(--color-tierra); font-weight:bold; text-align:center; padding:20px\'>Imagen de Elaboración<br><small>No disponible</small></div>';">
+                    </div>
                 </div>
             </div>
         </div>
@@ -434,11 +473,10 @@
         </div>
     </footer>
     
-    <!-- Botón de WhatsApp -->
+    <!-- Botón de WhatsApp - NÚMERO ACTUALIZADO -->
     <a href="https://wa.me/573123079981?text=Hola,%20estoy%20interesado%20en%20comprar%20panela" class="whatsapp-button" target="_blank">
         <span class="whatsapp-icon">📱</span>
         <span>Comprar</span>
     </a>
 </body>
 </html>
-
