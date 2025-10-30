@@ -162,6 +162,12 @@
         .presentation-image {
             height: 250px;
             overflow: hidden;
+            background-color: var(--color-marron-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-tierra);
+            font-weight: bold;
         }
         
         .presentation-image img {
@@ -325,7 +331,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>Panela Villa Nieves</h1>
+            <h1>Panela</h1>
             <p class="tagline">El Endulzante Ancestral, Lleno de Sabor y Vida</p>
         </div>
     </header>
@@ -368,9 +374,7 @@
             <div class="presentation-grid">
                 <div class="presentation-card">
                     <div class="presentation-image">
-                        <a href="Imagenes/1libra" target="_blank">
-                            <img src="Imagenes/1libra.jpg" alt="Panela de 1 Libra">
-                        </a>
+                        <img src="./imagenes/1libra.jpg" alt="Panela de 1 Libra" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color:var(--color-tierra); font-weight:bold; text-align:center; padding:20px\'>Panela 1 Libra<br><small>Imagen no disponible</small></div>';">
                     </div>
                     <div class="presentation-info">
                         <h3>Panela de 1 Libra</h3>
@@ -379,9 +383,7 @@
                 </div>
                 <div class="presentation-card">
                     <div class="presentation-image">
-                        <a href="Imagenes/4libras" target="_blank">
-                            <img src="Imagenes/4libras.jpg" alt="Panela de 4 Libras">
-                        </a>
+                        <img src="./imagenes/4libras.jpg" alt="Panela de 4 Libras" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color:var(--color-tierra); font-weight:bold; text-align:center; padding:20px\'>Panela 4 Libras<br><small>Imagen no disponible</small></div>';">
                     </div>
                     <div class="presentation-info">
                         <h3>Panela de 4 Libras</h3>
@@ -390,9 +392,7 @@
                 </div>
                 <div class="presentation-card">
                     <div class="presentation-image">
-                        <a href="Imagenes/pastilla" target="_blank">
-                            <img src="Imagenes/pastilla.jpg" alt="Panela en Pastilla">
-                        </a>
+                        <img src="./imagenes/pastilla.jpg" alt="Panela en Pastilla" onerror="this.style.display='none'; this.parentNode.innerHTML='<div style=\'color:var(--color-tierra); font-weight:bold; text-align:center; padding:20px\'>Panela Pastilla<br><small>Imagen no disponible</small></div>';">
                     </div>
                     <div class="presentation-info">
                         <h3>Panela en Pastilla</h3>
@@ -440,5 +440,4 @@
         <span>Comprar</span>
     </a>
 </body>
-
 </html>
